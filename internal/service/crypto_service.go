@@ -20,5 +20,5 @@ func (s *CryptoService) GetLastestPrice(limit int) ([]model.CryptoPrice, error) 
 		limit = 100
 	}
 
-	return s.repo.GrtRecentPrices(limit)
+	return s.repo.GetRecentPrices(limit)
 }

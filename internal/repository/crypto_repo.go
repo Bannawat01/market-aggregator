@@ -19,7 +19,7 @@ func (r *CryptoRepository) SavePrice(price *model.CryptoPrice) error {
 	return r.db.Create(price).Error
 }
 
-func (r *CryptoRepository) GrtRecentPrices(limit int) ([]model.CryptoPrice, error) {
+func (r *CryptoRepository) GetRecentPrices(limit int) ([]model.CryptoPrice, error) {
 	var prices []model.CryptoPrice
 
 	err := r.db.Order("created_at desc").Limit(limit).Find(&prices).Error
